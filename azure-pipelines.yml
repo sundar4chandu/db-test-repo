@@ -29,5 +29,5 @@ steps:
   inputs:
     OctoConnectedServiceName: 'Octopus Deploy'
     Space: 'Spaces-1'
-    Package: 'dbTest.App'
+    Package: 'package/*.zip'
     Replace: 'false'
