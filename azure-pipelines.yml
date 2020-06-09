@@ -18,3 +18,16 @@ steps:
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
 
+- task: OctopusPack@4
+  inputs:
+    PackageId: 'DBTest.App'
+    PackageFormat: 'Zip'
+    PackageVersion: '0.0.1'
+    OutputPath: 'packages'
+
+- task: OctopusPush@4
+  inputs:
+    OctoConnectedServiceName: 'Octopus Deploy'
+    Space: 'Spaces-1'
+    Package: 'packages'
+    Replace: 'true'
